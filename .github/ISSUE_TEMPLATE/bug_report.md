@@ -1,20 +1,17 @@
 ---
 name: "Bug Report"
-about: Report a bug
+about: Report a bug in the Online School App
 title: "[BUG] "
 labels: [bug]
 assignees: ""
 ---
 
+1. Open the app
+2. Navigate to login page
+3. Enter credentials
+4. Tap Login
+5. App crashes with error
 
-A clear description of what the bug is.
-
-1. Click on 
-2. See error
-
-- OS:
-- Browser:
-- Version:
 
 
 
