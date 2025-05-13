@@ -1,0 +1,15 @@
+name: Synthetic Monitoring
+on:
+  schedule:
+    - cron: '*/30 * * * *'  
+jobs:
+  synthetic-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install k6
+        run: |
+          curl -s https://github.com/grafana/k6/releases/download/v0.45.1/k6-v0.45.1-linux-amd64.tar.gz | tar -xz
+          sudo cp k6*/k6 /usr/local/bin
+      - name: Run test
+        run: k6 run tests/flows.js
