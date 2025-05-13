@@ -1,0 +1,26 @@
+name: online_school
+
+on:
+  issues:
+    types: [opened, labeled, closed]
+  pull_request:
+    types: [opened, closed]
+
+jobs:
+  manage-project:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Move to "To Do" on issue opened
+      uses: actions/add-to-project@v0.5.0
+      if: github.event_name == 'issues' && github.event.action == 'opened'
+      with:
+        project-url: https://github.com/orgs/YOUR_ORG/projects/YOUR_PROJECT_ID
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Move to "Done" on issue closed
+      uses: actions/add-to-project@v0.5.0
+      if: github.event_name == 'issues' && github.event.action == 'closed'
+      with:
+        project-url: https://github.com/orgs/YOUR_ORG/projects/YOUR_PROJECT_ID
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        column-name: Done
