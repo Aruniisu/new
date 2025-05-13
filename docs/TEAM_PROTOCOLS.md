@@ -1,7 +1,7 @@
 
 
 
-- Use feature branches: 'feature/<name>'
+- Use feature branches: 'feature/<login>'
 - Use pull requests for all changes
 - Require code review before merging
 
